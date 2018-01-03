@@ -63,6 +63,7 @@ a {
                     position: absolute;
                     right: 0;
                     padding: 0.2rem 0.5rem;
+                    color: #b9b8b8;
                     cursor: pointer;
                     &:hover {
                         background-color: #CCCCCC;
@@ -164,6 +165,7 @@ a {
         .memory {
             font-size: 0;
             a {
+                color: #b9b8b8;
                 display: inline-block;
                 vertical-align: middle;
                 width: 15%;
@@ -174,6 +176,9 @@ a {
                 border-style: solid;
                 font-size: 0.8rem;
                 font-weight: bold;
+                &.active {
+                    color: #222;
+                }
                 &:last-child {
                     float: right;
                 }
