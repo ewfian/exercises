@@ -67,7 +67,7 @@ gulp.task('images', function () {
 
 // Html
 gulp.task('html', function () {
-    return gulp.src('*.html')
+    return gulp.src(['*.html', 'src/views/*.html'])
         .pipe(gulp.dest('dist/'))
         .pipe(browserSync.reload({
             stream: true
@@ -93,5 +93,5 @@ gulp.task('watch', ['default', 'serve'], function () {
     // Watch images files
     gulp.watch('src/images/*', ['images']);
     // Watch html files
-    gulp.watch('*.html', ['html']);
+    gulp.watch(['*.html', 'src/views/*.html'], ['html']);
 });
