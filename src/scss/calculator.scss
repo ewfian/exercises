@@ -35,11 +35,13 @@ a {
             }
             .control {
                 position: absolute;
-                right: -0.4rem;
-                top: 0.3rem;
+                right: 0;
+                top: 0;
+                font-size: 0;
                 a {
                     padding: 0.5rem 0.8rem;
                     font-size: 0.8rem;
+                    display: inline-block;
                     &:hover {
                         background-color: #CCCCCC;
                     }
