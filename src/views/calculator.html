@@ -11,7 +11,7 @@
 
 <body>
     <div class="calculator">
-        <div class="calculator-body">
+        <section class="calculator-body">
             <div class="titlebar">
                 <div class="title">Calculator</div>
                 <div class="control">
@@ -19,32 +19,31 @@
                     <a href="#"> &#128470; </a>
                     <a href="#"> &#128473; </a>
                 </div>
-                <div class="status">
-                    <span class="nav"> &#9776;</span>
-                    <span class="mode">Standard</span>
-                    <span class="history"> &#8855;</span>
-                </div>
+            </div>
+            <div class="status">
+                <span class="mode">Standard</span>
+                <span class="history"> &#8855;</span>
             </div>
             <div class="screen">
                 <div class="screen-expression">3+9+</div>
                 <div class="screen-value">12</div>
-                <div class="memory">
-                    <a href="#">MC</a>
-                    <a href="#">MR</a>
-                    <a href="#" class="active">M+</a>
-                    <a href="#" class="active">M-</a>
-                    <a href="#" class="active">MS</a>
-                    <a href="#">M▼</a>
-                </div>
+            </div>
+            <div class="memory">
+                <a href="#">MC</a>
+                <a href="#">MR</a>
+                <a href="#" class="active">M+</a>
+                <a href="#" class="active">M-</a>
+                <a href="#" class="active">MS</a>
+                <a href="#">M&#9660;</a>
             </div>
             <div class="keyboard">
                 <div class="keyboard-table">
                     <!-- (div.table-tr>(div.table-td)*4)*6 -->
                     <div class="table-tr">
                         <div class="table-td">%</div>
-                        <div class="table-td"> &#8730;</div>
-                        <div class="table-td"> x&#178;</div>
-                        <div class="table-td"> 1/x</div>
+                        <div class="table-td">&#8730;</div>
+                        <div class="table-td">x&#178;</div>
+                        <div class="table-td">1/x</div>
                     </div>
                     <div class="table-tr">
                         <div class="table-td">CE</div>
@@ -79,9 +78,9 @@
 
                 </div>
             </div>
-        </div>
-        <div class="extend-panel">
-            <div class="nav">
+        </section>
+        <section class="extend-panel">
+            <div class="title">
                 <span class="active">History</span>
                 <span>Memory</span>
             </div>
@@ -99,7 +98,48 @@
             <div class="trush">
                 <span> &#128465;</span>
             </div>
-        </div>
+        </section>
+        <nav class="navigation">
+            <label for="menu-toggle" class="menu-button">
+                <span></span>
+            </label>
+            <input type="checkbox" id="menu-toggle" />
+            <div class="nav-panel">
+                <div class="content">
+                    <div class="catlog catlog-fixed">
+                        Calculator
+                    </div>
+                    <ul>
+                        <li class="active">Standard</li>
+                        <li>Scientific</li>
+                        <li>Programmer</li>
+                        <li>Data Calculation</li>
+                    </ul>
+                    <div class="catlog">
+                        Coverter
+                    </div>
+                    <ul>
+                        <li>Currency</li>
+                        <li>Volume</li>
+                        <li>Length</li>
+                        <li>Weight and Mass</li>
+                        <li>Temperature</li>
+                        <li>Energy</li>
+                        <li>Area</li>
+                        <li>Speed</li>
+                        <li>Time</li>
+                        <li>Power</li>
+                        <li>Data</li>
+                        <li>Pressure</li>
+                        <li>Angle</li>
+                    </ul>
+                </div>
+                <div class="about">
+                    <span class="icon"> &#161;</span>
+                    <span class="text">About</span>
+                </div>
+            </div>
+        </nav>
 </body>
 
 </html>
