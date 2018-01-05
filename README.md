@@ -1,1 +1,1 @@
-# SimpleWebPage
+# Web Training Exercises
