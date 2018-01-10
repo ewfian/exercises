@@ -70,77 +70,76 @@ $icon-graph-data:((0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
  [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0]
  [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0]] */
 
+$current-data: $icon-graph-data;
+$icon-height: 12rem;
 .icon {
     position: relative;
     margin: 2rem auto;
     overflow: hidden;
-    width: 52rem;
-    height: 12rem;
+    width: (($icon-height / length($current-data)) * length(nth($current-data, 1))) + $icon-height;
+    height: $icon-height;
     opacity: 0.95;
     background: #eee;
     background-image: linear-gradient(45deg, rgba(0, 0, 0, .25)25%, transparent 0, transparent 75%, rgba(0, 0, 0, .25)0), linear-gradient(45deg, rgba(0, 0, 0, .25)25%, transparent 0, transparent 75%, rgba(0, 0, 0, .25)0);
-    background-position: 0 0, 1.5rem 1.5rem;
-    background-size: 3rem 3rem;
+    background-position: 0 0, ($icon-height/8) ($icon-height/8);
+    background-size: ($icon-height/4) ($icon-height/4);
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.16), 0 0.125rem 0.6125rem 0 rgba(0, 0, 0, 0.1);
     font-size: 0;
     .icon-image {
-        height: 5rem;
-        width: 5rem;
+        $icon-image-size: $icon-height / 12 * 5;
+        height: $icon-image-size;
+        width: $icon-image-size;
         position: absolute;
-        top: 3.5rem;
-        left: 5rem;
+        top: ($icon-height - $icon-image-size) / 2;
+        left: ($icon-height - $icon-image-size) / 2;
         background-color: rgba(0, 0, 0, 0);
         border-radius: 50%;
-        border-width: 1rem;
+        border-width: $icon-height / 12;
         border-style: solid;
         border-color: #6f309b;
         &:before {
             content: "";
-            height: 1rem;
-            width: 4rem;
+            height: $icon-height / 12;
+            width: $icon-height / 3;
             position: absolute;
             display: block;
-            top: 2rem;
-            left: -3.875rem;
+            bottom: 0;
+            left: -$icon-height / 3;
             background-color: #6f309b;
             transform: rotate(-15deg);
         }
         &:after {
             content: "";
-            height: 1rem;
-            width: 4rem;
+            height: $icon-height / 12;
+            width: $icon-height / 3;
             position: absolute;
             display: block;
-            top: 0.0625rem;
-            left: 3rem;
+            top: 0;
+            left: $icon-height / 4;
             background-color: #6f309b;
             transform: rotate(-15deg);
         }
     }
     .icon-text {
-        width: 38rem;
-        height: 12rem;
         position: absolute;
-        left: 14rem;
+        left: $icon-height;
+        width: (($icon-height / length($current-data)) * 130);
         .row {
             font-size: 0;
             .col {
                 display: inline-block;
-                width: 0.5rem;
-                height: 0.5rem;
-                border-width: 0.001rem;
+                width: ($icon-height / length($current-data));
+                height: ($icon-height / length($current-data));
+                border-width: 0.0625rem;
                 border-style: solid;
                 border-color: #d2bce2;
             }
-            @for $i from 1 through 24 {
-                @for $j from 1 through 76 {
-                    @if nth(nth($icon-text-data, $i), $j)==1 {
+            @for $i from 1 through length($current-data) {
+                @for $j from 1 through length(nth($current-data, 1)) {
+                    @if nth(nth($current-data, $i), $j)==1 {
                         &:nth-child(#{$i}) {
                             &>:nth-child(#{$j}) {
                                 background-color: #6f309b;
-                                border-width: 0.001rem;
-                                border-style: solid;
-                                border-color: #d2bce2;
                             }
                         }
                     }
