@@ -59,7 +59,7 @@ var Vector2 = (function () {
         }
     };
 
-    Vector2.prototype.equels = function (v) {
+    Vector2.prototype.equals = function (v) {
         return this.x == v.x && this.y == v.y;
     };
 
