@@ -141,10 +141,11 @@ var Triangle = (function () {
 
     function Triangle(vertices) {
         Polygon.call(this, vertices);
-        this.name = 'Triangle';
     }
 
     _inherits(Triangle, Polygon);
+
+    Triangle.prototype.name = 'Triangle';
 
     Triangle.prototype.getArea = function () {
         var v = this.vertices;
@@ -171,10 +172,11 @@ var Quadrilateral = (function () {
 
     function Quadrilateral(vertices) {
         Polygon.call(this, vertices);
-        this.name = 'Quadrilateral';
     }
 
     _inherits(Quadrilateral, Polygon);
+
+    Quadrilateral.prototype.name = 'Quadrilateral';
 
     Quadrilateral.prototype.getArea = function () {
         var v = this.vertices;
