@@ -12,7 +12,22 @@
 <body>
     <div class="wrap">
         <div id="jigsaw-container">
-            <div class="setup-panel"></div>
+            <div class="setup-panel">
+                <div class="setting">
+                    <div class="input-group">
+                        <label for="row">Row:</label>
+                        <input id="row" type="text" value="5">
+                    </div>
+                    <div class="input-group">
+                        <label for="column">Column:</label>
+                        <input id="column" type="text" value="5">
+                    </div>
+                </div>
+                <div class="control">
+                    <div id="messing" class="btn">Messing</div>
+                    <div id="solving" class="btn">Solving</div>
+                </div>
+            </div>
             <div class="play-panel"></div>
         </div>
         <script src="scripts/jigsaw.min.js"></script>
