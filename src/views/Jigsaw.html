@@ -10,15 +10,17 @@
 </head>
 
 <body>
-    <div id="jigsaw-container">
-        <div class="setup-panel"></div>
-        <div class="play-panel"></div>
-    </div>
-    <script src="scripts/jigsaw.min.js"></script>
-    <script>
-        new Jigsaw('#jigsaw-container');
+    <div class="wrap">
+        <div id="jigsaw-container">
+            <div class="setup-panel"></div>
+            <div class="play-panel"></div>
+        </div>
+        <script src="scripts/jigsaw.min.js"></script>
+        <script>
+            new Jigsaw('#jigsaw-container').play();
 
-    </script>
+        </script>
+    </div>
 </body>
 
 </html>

@@ -42,16 +42,9 @@ gulp.task('styles', function () {
 
 // Scripts
 gulp.task('scripts', function () {
-    function createErrorHandler(name) {
-        return function (err) {
-            console.error('Error from ' + name + ' in compress task', err.toString());
-        };
-    }
-
     return gulp.src('src/scripts/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .on('error', createErrorHandler('uglify'))
         .pipe(rename({
             suffix: '.min'
         }))

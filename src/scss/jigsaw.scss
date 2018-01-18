@@ -5,14 +5,54 @@
 html,
 body {
     font-family: "Microsoft YaHei", Helvetica, cursive, "Source Han Sans SC", Arial, sans-serif !important;
-    background-color: rgb(181, 200, 241);
+    background-color: rgb(245, 245, 245);
     font-size: 100%;
 }
 
-a {
-    text-decoration: none;
-    color: #222;
-    &:visited {
+.wrap {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    @media (min-width: 576px) {
+        max-width: 540px;
+    }
+    @media (min-width: 768px) {
+        max-width: 720px;
+    }
+    @media (min-width: 992px) {
+        max-width: 960px;
+    }
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+    a {
+        text-decoration: none;
         color: #222;
+        &:visited {
+            color: #222;
+        }
+    }
+}
+
+#jigsaw-container {
+    width: 100%;
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(250, 250, 250);
+    .play-panel {
+        padding: 20px;
+        border: 1px dotted #efb484;
+        display: inline-block;
+        .block-list {
+            position: relative;
+            font-size: 0;
+            .block-item {
+                display: inline-block;
+                position: absolute;
+            }
+        }
     }
 }
