@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglify-es').default,
     rename = require('gulp-rename'),
     browserSync = require('browser-sync').create(),
     del = require('del');
@@ -42,10 +42,16 @@ gulp.task('styles', function () {
 
 // Scripts
 gulp.task('scripts', function () {
-    return gulp.src(['src/scripts/polyfill.js', 'src/scripts/**/*.js'])
+    function createErrorHandler(name) {
+        return function (err) {
+            console.error('Error from ' + name + ' in compress task', err.toString());
+        };
+    }
+
+    return gulp.src('src/scripts/**/*.js')
         .pipe(sourcemaps.init())
-        .pipe(concat('all.js'))
         .pipe(uglify())
+        .on('error', createErrorHandler('uglify'))
         .pipe(rename({
             suffix: '.min'
         }))
