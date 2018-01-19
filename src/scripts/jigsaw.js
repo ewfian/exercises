@@ -25,8 +25,6 @@ var Jigsaw = (function () {
         var root = this.container;
 
         initialize(root);
-
-        bindEvent(root);
     };
 
     var createBlocks = function () {
@@ -191,6 +189,7 @@ var Jigsaw = (function () {
             play.appendChild(_jigsaw);
             reverseMoving = true;
             animate();
+            bindEvent(root);
         });
 
         solving.addEventListener('click', () => {
@@ -200,10 +199,13 @@ var Jigsaw = (function () {
     };
 
     var bindEvent = function (root) {
-        var _jigsaw = root.querySelector('.play-panel');
-        //     _jigsaw.addEventListener('mouseover', mouseOverHandler);
-        //     _jigsaw.addEventListener('mouseout', mouseOutHandler);
-        _jigsaw.addEventListener('mousedown', mouseDownHandler);
+        var _jigsaw = root.querySelectorAll('.block-item');
+        _jigsaw.forEach(element => {
+            //     _jigsaw.addEventListener('mouseover', mouseOverHandler);
+            //     _jigsaw.addEventListener('mouseout', mouseOutHandler);
+            element.addEventListener('mousedown', mouseDownHandler);
+
+        });
         document.addEventListener('mouseup', mouseUpHandler);
 
 
