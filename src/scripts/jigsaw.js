@@ -19,7 +19,7 @@ var Jigsaw = (function () {
         blocksLength = 0,
         blocksArray = [];
 
-    var imageURL = '/images/capture.png';
+    var imageURL = 'images/capture.png';
 
     Jigsaw.prototype.play = function () {
         var root = this.container;
